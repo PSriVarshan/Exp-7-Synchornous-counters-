@@ -46,43 +46,102 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 4-bit Count Down Counter
 ### Procedure
-/* write all the steps invloved */
+
+Step 1: Module Declaration. Module is a keywords defined in Verilog.
+
+Step 2: Input-Output Declaration. Clock and reset are the inputs.
+
+Step 3: Declare the always keyword.
+
+Step 4: Use if loop for the functionality.
+
+Step 5: Assign the counter_up & counter_down.
+
+Step 6: End the module
 
 
 
 ### PROGRAM 
-/*
+
+
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
 
+Developed by:  P Sri Varshan
 
+RegisterNumber:  22008051
 
+#### UP COUNTER
 
+```
+module uc(input CLK,input reset,output[0:3]counter);
+reg[0:3] counter_up;
+always@(posedge CLK or posedge reset)
+begin
+if(reset)
+counter_up<=4'd0;
+else
+counter_up<=counter_up+4'd1;
+end
+assign counter=counter_up;
+endmodule
 
+```
+
+#### DOWN COUNTER
+
+```
+module dc(input CLK,input reset,output[0:3]counter);
+reg[0:3] counter_down;
+always@(posedge CLK or posedge reset)
+begin
+if(reset)
+counter_down<=4'd0;
+else
+counter_down<=counter_down-4'd1;
+end
+assign counter=counter_down;
+endmodule
+```
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
 
+#### UP COUNTER
+
+![image](https://user-images.githubusercontent.com/114944059/214602490-6f3ecaa1-43b8-4524-8304-6d85ac1c2c7e.png)
 
 
+####  DOWN COUNTER
 
 
-
+![image](https://user-images.githubusercontent.com/114944059/214602648-25bfed53-644c-4dcf-ae31-40803e9cd9eb.png)
 
 
 
 ### TIMING DIGRAMS FOR COUNTER  
 
+#### UP COUNTER
+
+![image](https://user-images.githubusercontent.com/114944059/214602849-f4b47aff-17df-4a77-b6ba-1d63e2f348f4.png)
 
 
+#### DOWN COUNTER
+
+![image](https://user-images.githubusercontent.com/114944059/214602944-1f559864-65f0-4fb7-adfc-cf9fbb250a3a.png)
 
 
 ### TRUTH TABLE 
 
+#### UP COUNTER
+
+![image](https://user-images.githubusercontent.com/114944059/214603089-62a9d801-1a41-4924-bf0c-27dfc49741db.png)
 
 
 
+#### DOWN COUNTER
+
+![image](https://user-images.githubusercontent.com/114944059/214603159-d7cee891-bbac-4faf-ab07-87def7fb4021.png)
 
 
 ### RESULTS 
+
+Thus, 4 bit up and down counters are implemented and its functionality is validated successfully.
